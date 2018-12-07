@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+/* index.php  */
+#charts>div{
+  
+   border: 1px solid red;
+   width: 99%;
+   margin: auto;     
+}
+
+#charts>div>div{
+   width: 95%;
+   margin: auto;
+/*       border: 1px solid red;*/
+   margin-top: 10px;
+   margin-bottom: 10px;     
+}
+.top-menu{
+    display:inline-block;
+    padding: 5px;
+}
+
+.top-menu>button{
+    margin-right: 10px;
+    border-radius: 15px;
+    width: 10%;
+}
+
+
+ #charts{
+   margin: 10px;
+   border: 1px solid red;
+}
+
+#group-btn>button{
+    margin: 0px;
+    border: 1px solid red;
+}
+
+.input-filter{
+    width: 95%;
+    border-radius: 25px;
+    
+    
+}
+.input-apply{
+    
+    width: 50%;
+    margin-left: 10px;
+    height: 25px;
+    padding: 0px;
+
+}
+
+
+
+
+.list-item{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+}
+
+.list-item>div:hover{
+    background-color: grey;
+}
+
+/*end index.php  */
+
