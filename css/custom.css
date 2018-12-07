@@ -63,12 +63,52 @@
 .list-item{
     position: absolute;
     z-index: 1;
-    background-color: white;
+    background-color: rgb(215, 215, 240);
+    width: 100%;
 }
 
 .list-item>div:hover{
-    background-color: grey;
+    background-color: darkgray;
 }
+
+.grafic-margin{
+    margin: 1%;
+    border: 1px solid grey;
+} 
+
 
 /*end index.php  */
 
+/* login.php */
+
+
+#login-form{
+                
+               
+    margin-top: 35%;
+    text-align: center;
+
+}
+
+
+#login-form .form-input{
+    width: 75%;
+    margin: auto;
+    border-radius: 25px;
+    margin:10px;
+    height: 35px;
+    border-color:blue; 
+    padding-left: 20px;
+  
+}
+
+
+
+
+#login>div{
+    
+    height: 100vh;
+   
+}
+
+/* end login.php */

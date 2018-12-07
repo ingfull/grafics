@@ -87,43 +87,14 @@ window.addEventListener('click', function(e){
         var arr_4;
 
         var categories;
-function loadDoc(days, end=null) {
-    
 
- 
-
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        //var myArr = JSON.parse(this.responseText);
-      //  document.getElementById("demo").innerHTML = this.responseText;
-      /*
-        arr = (JSON.parse(this.responseText))["value_1"];
-        arr_1 = (JSON.parse(this.responseText))["value_2"];
-        arr_3 = (JSON.parse(this.responseText))["value_3"];
-        arr_4 = (JSON.parse(this.responseText))["value_4"];
-        categories = (JSON.parse(this.responseText))["value_5"];*/
-    }
-  };
-  xhttp.open("GET", "odgovor.php?contract_id="+ contract_id +"&start="+days+"&end="+ end, true);
-  xhttp.send();
-/*
-  console.log(arr_4);
-
-  areaBasicFunctuon(arr);
-  hightcharts(arr_1);
-  splineSymbols(arr_3, categories);
-  splinePlotBands(arr_4);
-  */
-}
 
 
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
     $scope.table ;
-    $scope.firstName = "John";
-    $scope.lastName = promenljiva;
+    $scope.load_gif = true;
     $scope.tables_view = true;
     $scope.matrica;
     $scope.contracrt_id = null;

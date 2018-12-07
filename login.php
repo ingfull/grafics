@@ -85,40 +85,7 @@ if(isset($_GET['check'])){
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <style>
-            *{
-                padding: 0px;
-                margin: 0px;
-            }
-
-            #login-form{
-                
-               
-                margin-top: 35%;
-                text-align: center;
-
-            }
-            
-
-            #login-form .form-input{
-                width: 75%;
-                margin: auto;
-                border-radius: 25px;
-                margin:10px;
-                height: 35px;
-                border-color:blue; 
-                padding-right: 205px;
-            }
-
-            
-
-
-            #login>div{
-                
-                height: 100vh;
-               
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="./css/custom.css">
     </head>
     <body>
         <div id="login">
@@ -127,8 +94,8 @@ if(isset($_GET['check'])){
             <div class="col-md-4"></div>
                 <div class="col-md-4">
                 <form method="get" action="http://localhost:8080/Ibis-Instruments/login.php" >
-                    <input type="text" class="control-form form-input" name="username" />
-                    <input type="password" class="control-form form-input" name="password" />
+                    <input type="text" class="control-form form-input" name="username" placeholder="Username" />
+                    <input type="password" class="control-form form-input" name="password" placeholder="Password" />
                     <input type="hidden" value="check" name="check" />
                     <button class="btn btn-primary form-input">Login</button>
                 </form>

@@ -53,8 +53,16 @@
                     </div>
 
                     <div class="col-md-2">
-                        <img src="./img/giphy.webp" width="30" heigh="30" style="border: 1px solid red; " />
-                        <button id="assign-contract" class="input-filter input-apply btn btn-default" ng-click="assignContracrtIdView();"> Apply </button>
+                        <div class="row">
+                            
+                                 
+                            <div class="col-md-2">
+                               <img ng-show="load_gif" src="./img/giphy.webp" width="30" heigh="30" style="border: 1px solid red; "  />
+                            </div>
+                            <div class="col-md-10" style="padding: 0px">
+                               <button id="assign-contract" class="input-filter input-apply btn btn-default" ng-click="assignContracrtIdView();"> Apply </button>
+                            </div>
+                        </div>
                     </div>
                  </div>
             </div>
@@ -94,59 +102,62 @@
                 <div style="border: 1px solid grey;">    
                 <div ng-show="tables_view"  style="margin: 0px;">
 <!-- TABLE VIEW -->
-                 <div class="row">
-                    <div class="col-md-1" style="background-color: grey;"></div>
-                    <div class="col-md-2" >Date</div>
-                    <div class="col-md-2" >Value 1</div>
-                    <div class="col-md-2" >Value 2</div>
-                    <div class="col-md-2" >Value 3</div>
-                    <div class="col-md-2" >Va;ue 4</div>
-                    <div class="col-md-1" style="background-color: grey;"></div>
-                </div>
-
-            
-                 <div class="row" ng-repeat="row in matrica_tabele">
-                    <div class="col-md-1" style="background-color: grey;"></div>
-                    <div class="col-md-2" >{{ row.value_5 }}</div>
-                    <div class="col-md-2" >{{ row.value_1 }}</div>
-                    <div class="col-md-2" >{{ row.value_2 }}</div>
-                    <div class="col-md-2" >{{ row.value_3 }}</div>
-                    <div class="col-md-2" >{{ row.value_4 }}</div>
-                    <div class="col-md-1" style="background-color: grey;"></div>
-                </div>
+                  <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Value 1</th>
+                        <th>Value 2</th>
+                        <th>Value 3</th>
+                        <th>Value 4</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  ng-repeat="row in matrica_tabele">
+                        <td>{{ row.value_5 }}</td>
+                        <td>{{ row.value_1 }} </td>
+                        <td>{{ row.value_2 }} </td>
+                        <td>{{ row.value_3 }}</td>
+                        <td>{{ row.value_4 }}</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
 
 <!--END TABLE VIEW -->    
                 </div>
 
                 <div ng-hide="tables_view"  style="margin: 0px;"> 
-<!-- GRAFIC VIEW -->        
+<!-- GRAFIC VIEW -->       
 
             <div class="row">
-                <div style="background-color: yellow;" class="col-md-6">
-                    <div>
+                <div  class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="grafic-margin" >
                         <div id="container"></div> 
                     </div>
                 </div>
-                <div style="background-color: yellow;" class="col-md-6">
-                <div>
+                <div  class="col-md-6 col-sm-12 col-xs-12">
+                <div class="grafic-margin">
                     <div id="area-basic"></div> 
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div style="background-color: yellow;" class="col-md-6">
-                    <div>
+                <div  class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="grafic-margin">
                         <div id="spline-symbols"></div> 
                     </div>
                 </div>
-                <div style="background-color: yellow;" class="col-md-6">
-                    <div>
+                <div  class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="grafic-margin">
                         <div id="spline-plot-bands"></div> 
                     </div>
                 </div>
             
             </div>
 <!--END GRAFIC VIEW --> 
+
+
 
 
                 </div>
