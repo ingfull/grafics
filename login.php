@@ -2,6 +2,16 @@
 <?php
 session_start();
 
+
+require_once($_SERVER['DOCUMENT_ROOT'] ."/Ibis-Instruments/DatabaseConfiguration.php");
+require_once($_SERVER['DOCUMENT_ROOT'] ."/Ibis-Instruments/DatabaseConnection.php");
+
+
+
+
+
+
+
 if(isset($_GET['logout'])){
     session_destroy();
 }
@@ -38,27 +48,11 @@ if(isset($_GET['check'])){
     }
     
     if(count($errors) == 0){
-        echo "posted any password and username";
-        $host = 'localhost';
-        $db = 'ibis';
-        $user = 'root';
-        $pass = '';
-        $charset = 'utf8';
-        $port = '3306';
+        $config = new DatabaseConfiguration();
+        $connection = new DatabaseConnection($config);
+        $pdo = $connection->getConnection();
 
-        $dsn = "mysql:host=".$host.";port=".$port.";dbname=".$db.";charset=".$charset;
-        $options = [
-            PDO::ATTR_ERRMODE               => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE    => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES           =>false
-        ];
 
-        try{
-            $pdo = new PDO($dsn, $user, $pass, $options);
-        }catch(\PDOException $e){
-            throw new \PDOException($e->getMessage(), (int)$e->getCode());
-        }
-        
         $SQL = "SELECT *  FROM `user` WHERE `username` =  '" .$username. "' and  `password` = '". $password ."' ;";
 
        

@@ -1,5 +1,14 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'] ."/Ibis-Instruments/DatabaseConfiguration.php");
+require_once($_SERVER['DOCUMENT_ROOT'] ."/Ibis-Instruments/DatabaseConnection.php");
+
+$config = new DatabaseConfiguration();
+        $connection = new DatabaseConnection($config);
+        $pdo = $connection->getConnection();
+
+/*
+
 $host = 'localhost';
 $db = 'ibis';
 $user = 'root';
@@ -90,26 +99,13 @@ if($start==1 || $start==7){
 
 
 
-$stmt = $pdo->prepare($SQL);
+ $stmt = $pdo->prepare($SQL);
  $stmt->execute();
  $result = $stmt->fetchAll();
 
- 
-
- 
-
- 
 
  $array_values = $result;
-/*
 
-$required_column = 'value_';
- ;
-if(!isset($_GET['table']))
-    if($_GET['table']==false)
- for($i = 1; $i<= count($result[0]); $i++) 
- $array_values[$required_column.$i] = array_column($result, $required_column.$i);
-*/
  
  echo json_encode($array_values); exit(1);
  
